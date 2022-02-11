@@ -8,9 +8,9 @@ export default function Garment({ garment }) {
 // wrap Link component in a react-router link that takes the user to the correct detail page
     <Link to={`/wardrobe/${garment.id}`}>
       <div className='garment'>
-        <p>{garment.style}</p>
-        <p>{garment.description}</p>
         <img className='garment-img' src={garment.image}/>
+        <p>{garment.description} {garment.style}</p>
+        
       </div>
     </Link>
     

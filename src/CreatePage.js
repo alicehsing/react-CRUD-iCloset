@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { createGarment } from './services/fetch-utils';
 
 export default function CreatePage() {
     //set state: 
@@ -9,12 +11,28 @@ export default function CreatePage() {
   const [fabric, setFabric] = useState('');
   const [cost, setCost] = useState('');
   const [image, setImage] = useState('');
-
+  const history = useHistory();
   
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    await createGarment({
+      style: style,
+      brand: brand,
+      type: type,
+      description: description,
+      fabric: fabric,
+      cost: cost,
+      image: image
+    });
+
+    //use history.push to send the user to the wardrobe list page
+    history.push('/wardrobe');
+  }
 
   return (
     <div className='create'>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Add new garment</h2>
         <label>
             Style
@@ -45,10 +63,10 @@ export default function CreatePage() {
         </label>
         <label>
             Cost
-          <input value={cost} required name='cost' onChange={e => setCost(e.target.value)}/>
+          <input value={cost} required name='cost' placeholder='$' onChange={e => setCost(e.target.value)}/>
         </label>
         <label>
-            URL to Image
+            Image URL
           <input value={image} required name='image' onChange={e => setImage(e.target.value)}/>
         </label>
         <button>Add to Wardrobe</button>

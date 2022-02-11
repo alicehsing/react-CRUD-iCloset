@@ -16,13 +16,12 @@ export default function DetailPage() {
   }, [id]);
   
   return (
-    <div className='garment-detail'>DetailPage
-      <h2>{garment.description}{garment.style}</h2>
-      <h3>Style: {garment.style}</h3>
+    <div className='garment-detail'>
+      <h2>{garment.description} {garment.style}</h2>
       <p>Brand: {garment.brand} </p>
       <p>Fabric: {garment.fabric}</p>
       <p>Bought for: {garment.cost}</p>
-      <img src={garment.image}/>
+      <img className='garment-img-detail' src={garment.image}/>
     </div>
   );
 }

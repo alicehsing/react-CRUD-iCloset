@@ -36,9 +36,17 @@ export async function getWardrobe() {
 export async function getGarmentById(id) {
   const response = await client
     .from('wardrobe')
-    .select
+    .select()
     .match({ id })
     .single();
+
+  return checkError(response);
+}
+
+export async function createGarment(garment) {
+  const response = await client
+    .from('wardrobe')
+    .insert([garment]);
   console.log(response);
   return checkError(response);
 }
