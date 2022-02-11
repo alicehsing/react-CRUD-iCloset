@@ -33,8 +33,8 @@ function App() {
           {
             user && 
             <>
-              <NavLink to="/board-games">Board Game List</NavLink>
-              <NavLink to="/create">Create</NavLink>
+              <NavLink to="/board-games">My Wardrobe</NavLink>
+              <NavLink to="/create">Add New Garment</NavLink>
               <button onClick={handleLogout}>Logout</button></>
           }
         </header>

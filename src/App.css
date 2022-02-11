@@ -1,6 +1,6 @@
 body, html, #root, .App {
   height: 100%;
-  background-image: url(./background.webp);
+  background-image: url(./background.jpeg);
   background-size: cover;
 }
 
@@ -24,6 +24,13 @@ body, html, #root, .App {
   color: white;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: medium;
+  margin: 8px;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -43,7 +50,55 @@ body, html, #root, .App {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #ff4d6d;
+  color: #6d597a;
+}
+
+form { 
+  text-align:center;
+  margin: 100px;
+}
+
+form label {
+  display: block;
+  margin: 20px;
+  color: black;
+}
+
+form input {
+  margin: 0 20px;
+}
+
+form button {
+  margin: 5px;
+}
+
+.garment {
+  border: solid black 2px;
+  border-radius: 10px;
+  
+}
+
+.garment-img {
+  height: 150px;
+  width: 150px;
+}
+
+.create {
+  background-color: #8d99ae;
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 form { 
@@ -53,10 +108,18 @@ form {
 
 form label {
   display: block;
-  margin: 20px;
-  color: #f0efeb;
 }
 
 form button {
   margin: 5px;
+  align-self: center;
+
+}
+
+form label input, form label textarea, form label select  {
+  margin: 5px;
+}
+
+select {
+  width: 150px;
 }

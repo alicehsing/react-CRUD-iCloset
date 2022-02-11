@@ -1,4 +1,4 @@
-import { client } from './client';
+import { client, checkError } from './client';
 
 export function getUser() {
   return client.auth.session();
@@ -25,3 +25,20 @@ export async function logout() {
   return window.location.href = '../';
 }
 
+export async function getWardrobe() {
+  const response = await client
+    .from('wardrobe')
+    .select();
+ 
+  return checkError(response);
+}
+
+export async function getGarmentById(id) {
+  const response = await client
+    .from('wardrobe')
+    .select
+    .match({ id })
+    .single();
+  console.log(response);
+  return checkError(response);
+}
