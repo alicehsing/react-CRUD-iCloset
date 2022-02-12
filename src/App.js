@@ -12,6 +12,7 @@ import AuthPage from './AuthPage';
 import ListPage from './ListPage';
 import DetailPage from './DetailPage';
 import CreatePage from './CreatePage';
+import UpdatePage from './UpdatePage';
 
 
 function App() {
@@ -70,6 +71,14 @@ function App() {
               {
                 user
                   ? <CreatePage />
+                  : <Redirect to="/" />
+              }
+            </Route>
+            <Route exact path="/wardrobe/update/:id">
+              {/* if there is a user, render the detail page. Otherwise, redirect to the home route/auth page */}
+              {
+                user
+                  ? <UpdatePage />
                   : <Redirect to="/" />
               }
             </Route>

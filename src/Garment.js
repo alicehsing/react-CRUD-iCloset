@@ -10,7 +10,6 @@ export default function Garment({ garment }) {
       <div className='garment'>
         <img className='garment-img' src={garment.image}/>
         <p>{garment.description} {garment.style}</p>
-        
       </div>
     </Link>
     

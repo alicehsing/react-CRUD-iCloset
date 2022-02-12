@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { getWardrobe } from './services/fetch-utils';
-import Garment from './Garment';
-import './ListPage.css';
+import GarmentsList from './GarmentsList';
 
 export default function ListPage() {
   // state to hold onto the array of clothings
   const [clothings, setClothings] = useState([]);
+  const [search, setSearch] = useState('');
+  const [filteredGarment, setFilteredGarment] = useState([]);
   //fetch the clothings on load and inject them into state
   useEffect(() => {
     async function fetchWardrobe() {
@@ -15,11 +16,22 @@ export default function ListPage() {
     fetchWardrobe();
   }, []);
 
+  // filter/search bar
+  useEffect(() => {
+    const currentFilter = clothings.filter(garment => garment.description.includes(search));
+    setFilteredGarment(currentFilter);
+  }, [search, clothings]);
+
   return (
     <div className='wardrobe-list-page'>
-      {
-        clothings.map(garment => <Garment key={garment.id} garment={garment}/>)
-      }
+      <input value={search} placeholder='Search Wardrobe' type='text' onChange={e => setSearch(e.target.value)}/>
+      <div>
+        <GarmentsList clothings={
+          filteredGarment.length
+            ? filteredGarment
+            : clothings
+        } />
+      </div>
     </div>
   );
 }

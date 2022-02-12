@@ -132,10 +132,11 @@ select {
 }
 
 .wardrobe-list-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   height: auto;
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(5, 1fr);
+  width: auto;
 }
 
 .garment-detail {

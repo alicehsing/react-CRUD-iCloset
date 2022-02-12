@@ -50,3 +50,11 @@ export async function createGarment(garment) {
   console.log(response);
   return checkError(response);
 }
+
+export async function updateGarment(id, updatedGarment) {
+  const response = await client
+    .from('wardrobe')
+    .update(updatedGarment)
+    .match({ id });
+  return checkError(response);
+}
