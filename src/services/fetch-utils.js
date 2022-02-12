@@ -47,7 +47,7 @@ export async function createGarment(garment) {
   const response = await client
     .from('wardrobe')
     .insert([garment]);
-  console.log(response);
+    
   return checkError(response);
 }
 
