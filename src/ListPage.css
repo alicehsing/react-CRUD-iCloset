@@ -53,6 +53,25 @@ a {
   color: #6d597a;
 }
 
+form { 
+  text-align:center;
+  margin: 100px;
+}
+
+form label {
+  display: block;
+  margin: 20px;
+  color: black;
+}
+
+form input {
+  margin: 0 20px;
+}
+
+form button {
+  margin: 5px;
+}
+
 .garment {
   /* border: solid black 2px; */
   
@@ -86,21 +105,16 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: aliceblue;
-  background-size: cover; */
+  background-color: aliceblue;
 }
 
 form { 
   text-align: right;
   margin: 100px;
-  padding: 20px;
-  background-color: #8d99ae;
-  
 }
 
 form label {
   display: block;
-  color: black;
 }
 
 form button {
@@ -119,24 +133,10 @@ select {
 
 .wardrobe-list-page {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: aliceblue;
-  height: 100%;
-}
-
-.wardrobe-list-page input {
-
-  width: 200px;
-  align-self: center;
-  margin: 20px;
-}
-
-.garment-list {
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  height: auto;
+  width: auto;
 }
 
 .garment-detail {
@@ -162,7 +162,3 @@ header button {
   outline:none;
 }
 
-.auth h1 {
-  background-color: white;
-  padding: 10px;
-}
