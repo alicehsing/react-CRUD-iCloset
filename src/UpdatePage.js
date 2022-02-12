@@ -84,7 +84,7 @@ export default function UpdatePage() {
             Image URL
           <input value={image} required name='image' onChange={e => setImage(e.target.value)}/>
         </label>
-        <button>Add to Wardrobe</button>
+        <button>Update Wardrobe</button>
       </form>
 
     </div>
