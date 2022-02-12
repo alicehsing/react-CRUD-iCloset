@@ -29,7 +29,7 @@ export default function DetailPage() {
       <p>Bought for: {garment.cost}</p>
       <img className='garment-img-detail' src={garment.image}/>
       <div>
-        <button onClick={handleRedirect}>Update</button>
+        <button onClick={handleRedirect}>Update Item</button>
       </div>
       
     </div>
